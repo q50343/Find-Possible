@@ -2,6 +2,9 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;   
 }
+body , html{
+    height: 100%;
+}
 hr{
     width: 90%
 }
@@ -21,7 +24,10 @@ a:hover{
     width:100%;
     z-index: 10;
 }
-
+.pos{
+    position: absolute;
+    right: 5px;
+}
 /* menu-icon */
 .menu-icon{
     color: #FFF;
@@ -405,9 +411,6 @@ span{
 
 
 /* login */
-.form-wrapper{
-    display: none;
-}
 .form a{
     text-decoration: none;
     color: #b5bebc;
@@ -425,6 +428,7 @@ span{
     background-color:rgba(10,10,10,0.5);
     z-index: 80;
     top: 0;
+    display: none;
 }
 .form{
     background-color:rgb(10,10,10);
