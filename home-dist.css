@@ -304,16 +304,13 @@ a:hover{
     z-index: 200;
 }
 .btn1-1{
-    top: 20%;
+    top: 30%;
 }
 .btn2-1{
-    top: 40%
+    top: 50%
 }
 .btn3{
-    top: 60%
-}
-.btn4{
-    top: 80%
+    top: 70%
 }
 .btn:hover{
     color: #fff;
