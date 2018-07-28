@@ -16,17 +16,17 @@
     <link rel="stylesheet" href="work-dist.css">
 </head>
 <body>
-        <!-- share to fb -->
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.0';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- share to fb -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.0';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div class="wrapper">
-
+        
         <!--start navbarMenu -->
         <div class="navbar">            
             <div class="menu-icon"><i class="fas fa-align-left"></i></div>
@@ -35,7 +35,7 @@
             <div id="user"></div>
             <i class="fas fa-caret-down"></i>  
             <ul class="downMenu">
-                <li><a href="https://q50343.github.io/Find-Possible/home/follow.html"><i class="fas fa-heart"></i>follows</a></li>
+                <li><a href="https://q50343.github.io/Find-Possible/follow"><i class="fas fa-heart"></i>follows</a></li>
                 <li class="log-out"><i class="fas fa-sign-out-alt"></i>log out</li>
             </ul>        
         </div>
@@ -43,8 +43,8 @@
         <!-- web navbar -->
         <div class="container">
             <div class="menuAll  row">         
-                <a href="https://q50343.github.io/Find-Possible/home/activites.html" class="menu col-md-6">Activities</a>
-                <a href="#" class="menu col-md-6">Put ads</a>                
+                <a href="https://q50343.github.io/Find-Possible/activites" class="menu col-md-6">Activities</a>
+                <a href="https://q50343.github.io/Find-Possible/contact" target="_blank" class="menu col-md-6">Contact</a>                
             </div> 
         </div>   
         
@@ -63,7 +63,7 @@
             </div>
             <div class="Popularity">
                 <i class="fas fa-heart n-login is-in heart"></i><span class="heart-num"> 60</span>
-                <i class="fas fa-comment-alt n-login is-in comment"></i><span> 2</span>
+                <i class="fas fa-comment-alt n-login is-in comment"></i><span class="comment-num"> 2</span>
                 <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/share-button?locale=zh_TW" data-layout="button" data-size="small" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a></div>
             </div>
             <textarea rows="1" contenteditable="true" cols="40" class="comment-text" placeholder=" comment..."></textarea>
@@ -94,14 +94,16 @@
                 <div class="head new-head" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRgVkFSn7OUyoXx9b4BGB1Z-9hx_7WDXUelEoaRFkViWwM_e9h)"></div>
                 <div class="name new-name"></div><br>           
             </div>
-            <div class="response new-response"></div>
+            <div class="new-c">
+               <div class="response new-response"></div><i class="fas fa-edit"></i> 
+            </div>
             <!-- end response -->
         </div>
         
         <!-- start  navbarMenu-->
         <div class="navbarMenu">
-            <a href="https://q50343.github.io/Find-Possible/home/activites.html#" class="btn btn1-1"><span>Activities</span></a>
-            <a href="#" class="btn btn2-1"><span>Put ads</span></a>
+            <a href="https://q50343.github.io/Find-Possible/activites" class="btn btn1-1"><span>Activities</span></a>
+            <a href="https://q50343.github.io/Find-Possible/contact" target="_blank" class="btn btn2-1"><span>Contact</span></a>
         </div>
         <!-- end  navbarMenu-->
         

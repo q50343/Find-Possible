@@ -71,13 +71,18 @@ function heartClick(){
 
 // comment
 var comment = document.querySelector('.comment');
-var commentText = document.querySelector('.comment-text')
+var commentText = document.querySelector('.comment-text');
+var commentNum =document.querySelector('.comment-num');
+var commentNumNow = commentNum.innerHTML;
 comment.addEventListener('click',commentClick,false);
 commentText.addEventListener('keydown',textNum,false);
 
 var newUser = document.querySelector('.new');
 var newName = document.querySelector('.new-name');
 var newResponse = document.querySelector('.new-response');
+var edit = document.querySelector('.fa-edit');
+var response = document.querySelector('.response');
+var newC = document.querySelector('.new-c');
 
 // 打開commentText
 function commentClick(){
@@ -98,10 +103,37 @@ function textNum(e){
         newName.innerHTML = user.innerHTML;
         newResponse.textContent = commentText.value;
         commentText.value = null;
+        commentNum.innerHTML = (parseInt(commentNumNow))+ 1 ;
+        edit.style.display = 'block'
+    }   
+}
+
+// edit
+edit.onclick = function(){
+    var textR = newResponse.innerHTML;
+    newResponse.style.display = 'none';
+    var textBox = document.createElement('input');
+    textBox.type = 'text';
+    textBox.setAttribute('class','edit');
+    textBox.value = textR;
+    newC.appendChild(textBox);
+
+    textBox.onkeydown = function(e){
+        if(e.keyCode == 13){
+            var edit2 = textBox.value;
+            textBox.style.display = 'none';
+            newResponse.style.display = 'block';
+            newResponse.innerHTML = edit2;
+        }
     }
-    
 }
 
 
-
+// log out
+logOut.onclick = function(){
+    for(var i=0;i<nLogin.length;i++){
+        nLogin[i].classList.add('n-login') 
+    }   
+    commentText.style.display = 'none'
+}
 

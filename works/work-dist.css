@@ -185,7 +185,41 @@ span{
 }
 .response{
     margin:0 20px 30px 60px;
+    padding-right: 50px;
 }
+.new-c{
+    width: 90%;
+}
+.new-c::after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.new-response{
+    float: left;
+}
+.fa-edit{    
+    color: #bbb;
+    float: right;
+    display: none;
+}
+.fa-edit:hover{
+    color: rgb(101, 107, 121);  
+}
+.edit{
+    margin-left: 60px;
+    width: 60%;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    padding-left: 5px;
+}
+.edit:focus{
+    border:1px solid #bbb;
+}
+
 
 /* login之後出現的 */
 .downMenu{
@@ -219,7 +253,7 @@ span{
 }
 .downMenu li:hover{
     background-color:#3c3d3f;  
- }
+}
 
 /* rwd */
 @media (min-width: 576px) {
@@ -449,8 +483,8 @@ h1{
 label{
     position: absolute;
     -webkit-transform: translateY(6px);
-          -ms-transform: translateY(6px);
-          transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
     left:13px ;
     color: rgba(255, 255, 255, 0.5);
     -webkit-transition: all 0.25s ease;
@@ -458,7 +492,6 @@ label{
     transition: all 0.25s ease;
     font-size: 22px;
     pointer-events: none;
-    -webkit-backface-visibility: hidden;
 }
 label .req {
     margin: 2px;
@@ -466,8 +499,8 @@ label .req {
 }
 label.active {
     -webkit-transform: translateY(45px);
-            -ms-transform: translateY(45px);
-            transform: translateY(45px);
+    -ms-transform: translateY(45px);
+    transform: translateY(45px);
     left: 2px;
     font-size: 14px;
     color: #ffffff;
@@ -566,6 +599,6 @@ input:focus, textarea:focus {
     .button{
         font-size: 20px;
     }
-
+    
 }
 

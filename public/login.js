@@ -2,6 +2,7 @@ var signupBtn = document.querySelector('.signupBtn');
 var loginBtn = document.querySelector('.loginBtn');
 var signup = document.getElementById('signup');
 var login = document.getElementById('login');
+var isLogin = false;
 
 var inp = document.getElementsByTagName('input');
 var label = document.querySelectorAll('label');
