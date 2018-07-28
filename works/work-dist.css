@@ -138,14 +138,11 @@ span{
     font-size: 20px;
 }
 .fb-share-button{
-    position: absolute;
-    top: 5px;
-    right: 0;
-}
-.fb-share-button{
     width: 60px;
     height: 20px;
     display: inline-block;
+    position: absolute;
+    right: 5px;
 }
 .comment-text{
     border: 1px solid rgb(240, 237, 237);
@@ -165,6 +162,7 @@ span{
 .new{
     display: none
 }
+
 /* work-info */
 .work-info{
     margin: 0 20px;
