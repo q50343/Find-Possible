@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find-Possible-activities</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">  
+    <link href="https://fonts.googleapis.com/css?family=Chivo:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800|Roboto+Condensed:700" rel="stylesheet">
+    <link rel="stylesheet" href="activites-dist.css">
+    
+</head>
+<body>
+    <!-- 資料來自白晝之夜  https://www.facebook.com/pg/NuitBlancheTPE/events/?ref=page_internal -->
+    
+    <div class="wrapper">
+        <!--start navbarMenu -->
+        <div class="navbar">            
+            <div class="menu-icon"><i class="fas fa-align-left"></i></div>
+            <a href="https://q50343.github.io/Find-Possible/home/home"></a><img src="image/logo.gif" alt="" class="logo"></a>
+            <a href="#" class="login n-login">login</a>     
+            <div id="user"></div>
+            <i class="fas fa-caret-down"></i>
+            <ul class="downMenu">
+                <li><a href="https://q50343.github.io/Find-Possible/home/follow"><i class="fas fa-heart"></i>follows</a></li>
+                <li class="log-out"><i class="fas fa-sign-out-alt"></i>log out</li>
+            </ul>
+        </div>
+        <!-- end navbarMenu -->
+        <!-- web navbar -->
+        <div class="container">
+            <div class="menuAll  row">         
+                <a href="https://q50343.github.io/Find-Possible/home/viewAll" class="menu col-md-6">View all</a>
+                <a href="https://q50343.github.io/Find-Possible/home/contact" class="menu col-md-6">Contact</a>       
+            </div> 
+        </div>          
+        <!-- start title -->
+        <div class="bg">
+            <div class="title">Art <span> for</span>
+                <div class="title2"> Everyone</div>
+                
+            </div>
+        </div>
+        <!-- end title -->
+        
+        <!-- start activities -->
+        
+        <div class="activities-wrapper">
+            
+            <h4>Recent activities</h4><hr>
+            <div class=" row">
+                <div class="col-2 recent-date">9月<br>7</div>
+                <div class="col-10">                                                               
+                    <div class ="recent">第三場｜2018白晝一夜情講座—越在地、越國際，白晝之夜的在地化</div>                    
+                    <div class="time">下午7:00</div>
+                    <div class="date"><i class="far fa-clock"></i> 活動將於<span class="days"></span> 天後舉行</div>  
+                    <div class="info">
+                        <div class="location"><i class="fas fa-map-marker-alt"></i>國立臺灣大學傅鐘</div>
+                        <div class="info-map" id="map2"></div>            
+                        <img src="image/brown.gif" alt="landmark" class="mark"><span>藝術作品</span>
+                        <img src="image/red.png" alt="landmark" class="mark"><span>舞台演出</span>
+                        <img src="image/ygreen.png" alt="landmark" class="mark"><span>活動演出</span>                 
+                    </div>
+                </div>   
+                
+                <div class="col-2 recent-date">8月<br>3</div>
+                <div class="col-10">                                                             
+                    <div class ="recent">第二場｜2018白晝一夜情講座—誰的「城市藝術節」？哪些人的「在地」？</div>                    
+                    <div class="time">下午7:00</div>
+                    <div class="date"><i class="far fa-clock"></i> 活動將於<span class="days"></span> 天後舉行</div>  
+                    <div class="info"> 
+                        <div class="location"><i class="fas fa-map-marker-alt"></i>中山藏藝所</div>                    
+                        <div class="info-map" id="map"></div>                           
+                    </div>
+                </div>   
+            </div>
+            
+            <h4 class="end">End activities</h4><hr>
+            <div class="row">
+                
+                <div class="col-2">1月<br>20</div>
+                <div class="col-10">２０１８臺北·巴黎 城市策展交流座談會
+                    <div class="time">上午9:00-中午12:00</div>
+                </div>
+                
+                <div class="col-2">10月<br>7</div>
+                <div class="col-10">2017 台北白晝之夜：公館經典 Live House 之夜
+                    <div class="time">下午11:00</div>
+                </div>
+                
+                <div class="col-2">10月<br>7</div>
+                <div class="col-10">用故事換一份古蹟燒｜2017 白晝之夜 Nuit Blanche Taipei
+                    <div class="time">下午6:00</div>
+                </div>
+                
+                <div class="col-2">10月<br>7</div>
+                <div class="col-10">白晝之夜Ｘ雜學校-超深夜間部辯論Show
+                    <div class="time">下午10:00</div>
+                </div>
+            </div>
+        </div>
+        <!-- end activities -->
+        
+        <!-- start loginForm -->
+        <div class="form-wrapper">
+            <div class="form">
+                
+                <!-- start top-group -->
+                <ul class="top-group">
+                    <li class="top"><a href="#signup" class="signupBtn">Sign Up</a></li>
+                    <li class=" top"><a href="#login" class="loginBtn active">Log In</a></li>
+                </ul>
+                <!-- end top-group -->
+                
+                <!-- start content -->
+                <div class="content">
+                    
+                    <!-- start signin -->
+                    <div id="signup">
+                        <h1>Sign Up for Free</h1>
+                        
+                        <form action="/" method="post">
+                            <!--start email  -->
+                            <div class="field">
+                                <label >
+                                    Email Address<span class="req">*</span>
+                                </label>
+                                <input type="email" required autocomplete="off" id="mail"/>
+                            </div>
+                            <!--end email  -->
+                            <!--start password -->
+                            <div class="field">
+                                <label >
+                                    Set A Password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" id="pwd"/>
+                            </div>
+                            <!-- end password -->
+                            <input type="button" class="button btn1" value="GET STARTED">                            
+                        </form>
+                    </div>
+                    <!-- end signin -->
+                    
+                    <!-- start login -->
+                    <div id="login">
+                        <h1>Welcome Back!</h1>
+                        
+                        <form action="/" method="post">
+                            <!-- start email -->
+                            <div class="field">
+                                <label >
+                                    Email Address<span class="req">*</span>
+                                </label>
+                                <input type="email" required autocomplete="off" id="mailL"/>
+                            </div>
+                            <!-- end email -->
+                            <!-- start password -->
+                            <div class="field">
+                                <label >
+                                    Password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" id="pwdL"/>
+                            </div>
+                            <!-- end password -->
+                            <p class="forgot"><a href="#">Forgot Password</a></p>
+                            <button class="button btn2" >Log In </button>                                             
+                        </form>
+                    </div>
+                    <!-- end loginForm -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- start navbarMenu -->
+        <div class="navbarMenu">
+            <a href="https://q50343.github.io/Find-Possible/home/viewAll" class="btn btn1"><span>View all</span></a>
+            <a href="https://q50343.github.io/Find-Possible/home/contact" class="btn btn2"><span>Contact</span></a>
+        </div>        
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>       
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAtu5CJCVspDzyaa1me2qePMN4KVcm_Ok&callback=initMap"
+    async defer></script>    
+    <script src="map.js"></script>
+    <script src="activites.js"></script>
+    <script src="login.js"></script>
+    <script src="public/ajax.js"></script>
+    
+</body>
+</html>
