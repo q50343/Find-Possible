@@ -226,6 +226,7 @@ span{
 .fb-share-button{
     position: absolute;
     right: 5px;
+    display: inline-block;
 }
 
 /* login之後出現的 */
