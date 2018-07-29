@@ -1,3 +1,81 @@
+var signupBtn = document.querySelector('.signupBtn');
+var loginBtn = document.querySelector('.loginBtn');
+var signup = document.getElementById('signup');
+var login = document.getElementById('login');
+
+var inp = document.getElementsByTagName('input');
+var label = document.querySelectorAll('label');
+var body = document.body;
+
+// click login
+var nLogin = document.querySelectorAll('.n-login');
+var form = document.querySelector('.form-wrapper');
+var loginClick = document.querySelector('.login');
+body.addEventListener('click',closeLogin,false);
+
+
+for(var i=0;i<nLogin.length;i++){
+    nLogin[i].onclick = function(){
+        if( this.classList.contains('n-login')){
+            form.style.display = 'block'; 
+        }else if(!this.classList.contains('n-login')){
+            form.style.display = 'none';
+        }
+    }
+}
+
+function closeLogin(e){
+    console.log(e)
+    if( e.path.length == '5'){
+        form.style.display = 'none';
+    }
+}
+
+// signup & login
+signupBtn.onclick = function(){
+    signup.style.display = 'block';
+    signupBtn.classList.add('active');
+    login.style.display = 'none';
+    loginBtn.classList.remove('active');
+}
+loginBtn.onclick = function(){
+    login.style.display = 'block';
+    loginBtn.classList.add('active');
+    signup.style.display = 'none';
+    signupBtn.classList.remove('active');
+}
+
+//form textarea
+for(var i=0;i<inp.length;i++){
+    inp[i].onkeyup = function(e){
+        
+        if(this.value !== ""){
+            this.previousElementSibling.classList.add('active');
+        }else{
+            this.previousElementSibling.classList.remove('active');
+        }
+    }
+}
+
+// down menu
+var down = document.querySelector('.fa-caret-down');
+var downMenu = document.querySelector('.downMenu');
+down.addEventListener('click',dropDown,false);
+
+var isShow = false;
+var c = null;
+
+function dropDown(e){
+    e.stopPropagation();
+    isShow = !isShow;
+    downMenu.style.display = isShow ? 'block' : 'none';   
+}
+
+document.onclick = function(){
+    isShow = false;
+    downMenu.style.display = 'none';
+}
+
 // navbarMenu
 var menuIcon = document.querySelector('.menu-icon');
 var navbarMenu = document.querySelector('.navbarMenu');
@@ -12,22 +90,6 @@ function openMenu(e){
 function closeMenu(e){
     if(e.target.nodeName !== "A" && e.target.nodeName !== "I"){
         navbarMenu.style.display = 'none';
-    }
-}
-
-// click login
-var nLogin = document.querySelectorAll('.n-login');
-
-function openMenu(e){
-    navbarMenu.style.display = 'block';
-}
-for(var i=0;i<nLogin.length;i++){
-    nLogin[i].onclick = function(){
-        if( this.classList.contains('n-login')){
-            form.style.display = 'block'; 
-        }else if(!this.classList.contains('n-login')){
-            form.style.display = 'none';
-        }
     }
 }
 
@@ -128,12 +190,16 @@ edit.onclick = function(){
     }
 }
 
-
 // log out
-logOut.onclick = function(){
+var logOut = document.querySelector('.log-out');
+logOut.onclick = function(e){
+    console.log(e);
     for(var i=0;i<nLogin.length;i++){
         nLogin[i].classList.add('n-login') 
     }   
-    commentText.style.display = 'none'
+    commentText.style.display = 'none';
+    form.style.display = 'block';
+    userMenu.style.color = "#212529";
+    loginClick.style.display = 'block';
+    user.innerHTML = '';
 }
-

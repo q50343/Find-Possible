@@ -27,7 +27,7 @@ btn1.onclick = function(e){
                 userMenu.style.display = 'block';
                 loginClick.style.display = 'none';
                 console.log(mail);
-                var userName = mail.split('@');               
+                var userName = mail.split('@');                              
                 user.innerHTML = userName[0];
                 for(var i=0;i<isIn.length;i++){
                     console.log(isIn[0])
