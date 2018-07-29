@@ -427,7 +427,7 @@ span{
     height: 100vh;
     background-color:rgba(10,10,10,0.5);
     z-index: 80;
-    top: 0;
+    bottom: 0;
     display: none;
 }
 .form{
