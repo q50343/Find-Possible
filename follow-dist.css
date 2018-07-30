@@ -21,17 +21,18 @@ a{
     font-size: 20px;
     z-index: 10;
 }
-.navbar .follow-head{
+.navbar .follow-title{
     color: #fff;
     text-align: center;
     width: 100%;
-    font-size: 20px
+    font-size: 20px;
+    line-height: 50px
 }
 .wrapper{
     position: relative;
     top: 70px;
 }
-.person{
+.personClass{
     margin-top: 20px;
 }
 .follow-head{
@@ -64,7 +65,7 @@ a{
     color: #fff;
     padding: 5px 10px;
 }
-.person::after{
+.personClass::after{
     visibility: hidden;
     display: block;
     font-size: 0;
@@ -108,6 +109,7 @@ a{
     background-color: rgba(255, 255, 255, 0.95);
     -webkit-box-shadow: 0 10px 10px rgba(100, 100, 100, 0.3);
     box-shadow: 0 10px 10px rgba(100, 100, 100, 0.3);   
+    overflow: hidden;
 }
 .remove-follow{
     height: 175px;
@@ -125,7 +127,7 @@ a{
     margin-top: 50px;
     margin-left: 125px;
 }
-.remove-q{
+.remove-qus{
     margin-top: 20px;
     text-align: center
 }
