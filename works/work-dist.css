@@ -28,6 +28,9 @@ a:hover{
     position: absolute;
     right: 5px;
 }
+i{
+    cursor: pointer;
+}
 /* menu-icon */
 .menu-icon{
     color: #FFF;
@@ -63,6 +66,9 @@ a:hover{
     cursor: pointer;
     color: #fff;
     display: none;
+    padding-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }
 .inner-wrapper{
     padding-bottom: 50px;
@@ -129,10 +135,12 @@ a:hover{
     width: 90%;
     position: relative;
 }
-i{
+.Popularity i{
     font-size: 20px;
-    padding-left: 10px;
-    cursor: pointer;
+    padding:0 3px 0 10px;
+}
+.comment-num{
+    padding-right: 10px;
 }
 .heart:hover{
     color: rgb(247, 91, 91)
@@ -225,7 +233,7 @@ span{
 }
 .select{
     border: 1px solid #bbb;
-    width: 90px;
+    width: 100px;
     height: 65px;
     position: absolute;
     right: 0;
@@ -234,6 +242,10 @@ span{
     padding: 5px;
     box-shadow: 0 5px 10px rgba(210,210,210,0.5);
     display: none;
+}
+.select i{
+    padding:0 5px 0 10px;
+    font-size: 16px;
 }
 .select div{
     color: #bbb;

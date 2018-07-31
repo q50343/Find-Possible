@@ -126,7 +126,7 @@ function heartClick(){
     if(user.innerHTML !== ''){
         heartCheck = !heartCheck;
         console.log((parseInt(heartNumNow))+ 1);
-        heartCheck? heartNum.innerHTML = (parseInt(heartNumNow))+ 1 : heartNum.innerHTML = ' '+ (parseInt(heartNumNow));
+        heartCheck? heartNum.innerHTML = (parseInt(heartNumNow))+ 1 : heartNum.innerHTML = (parseInt(heartNumNow));
         heartCheck? heart.style.color = 'rgb(247, 91, 91)':heart.style.color = '#bbb'
     }   
 }
@@ -181,7 +181,7 @@ function textNum(e){
             response.outerHTML = '<div class="response new-response">'+ text +'</div><textarea class = "edit-text"></textarea><div class = "ellipsis"><i class="fas fa-ellipsis-h"></i><div class = "select"><div class = "edit"><i class="fas fa-edit"> </i> edit</div><div class = "deleteT"><i class="fas fa-trash-alt"></i> delete</div></div></div> '
             commentText.value = null;
             commentNumNow ++;
-            commentNum.innerHTML = ' ' + (parseInt(commentNumNow)) ;
+            commentNum.innerHTML = (parseInt(commentNumNow)) ;
             var edit = document.querySelectorAll('.edit');
             var select = document.querySelectorAll('.select');
             var deleteT = document.querySelectorAll('.deleteT');
@@ -218,6 +218,7 @@ function textNum(e){
                         textBox.style.display = 'block';                   
                         textBox.value = textR;
                         
+                        
                         textBox.onkeydown = function(e){
                             if(e.keyCode == 13){
                                 var edit2 = textBox.value;
@@ -225,15 +226,24 @@ function textNum(e){
                                 newResponse[i].style.display = 'block';
                                 newResponse[i].innerHTML = edit2;
                                 ellipsis[i].style.display = 'block';
-                                ellipsis[i].style.color = '#eee';
-                                
-                                ellipsis[i].onmouseover = function(){
-                                    ellipsis[i].style.color = 'rgb(101, 107, 121)';
-                                }
-                                // ellipsis[i].onmouseout = function(){
-                                //     ellipsis[i].style.color = '#eee';
-                                // }
+                                ellipsis[i].style.color = '#eee';                                
                             }
+                        }
+                        document.onclick = function(e){
+                            if(e.target.className !== "fas fa-ellipsis-h" && e.target.className !== "edit-text" && e.target.className !== "edit"){
+                                var edit2 = textBox.value;
+                                textBox.style.display = 'none';
+                                newResponse[i].style.display = 'block';
+                                newResponse[i].innerHTML = edit2;
+                                ellipsis[i].style.display = 'block';
+                                ellipsis[i].style.color = '#eee';
+                            }
+                        }
+                        ellipsis[i].onmouseover = function(){
+                            ellipsis[i].style.color = 'rgb(101, 107, 121)';
+                        }
+                        ellipsis[i].onmouseout = function(){
+                            ellipsis[i].style.color = '#eee';
                         }
                     }               
                 }   
@@ -252,7 +262,7 @@ function textNum(e){
                         }
                         removeAllChild();     
                         commentNumNow --;
-                        commentNum.innerHTML = ' ' + (parseInt(commentNumNow)) ;
+                        commentNum.innerHTML = (parseInt(commentNumNow)) ;
                     }
                 }
             }
