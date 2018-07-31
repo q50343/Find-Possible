@@ -244,8 +244,12 @@ span{
     display: none;
 }
 .select i{
-    padding:0 5px 0 10px;
+    padding:5px 5px 0 10px;
     font-size: 16px;
+}
+.select span{
+    display: inline-block;
+    padding-top: 5px;
 }
 .select div{
     color: #bbb;
@@ -257,11 +261,7 @@ span{
 .fa-edit{
     padding-bottom: 10px;
 }
-.fb-share-button{
-    position: absolute;
-    right: 5px;
-    display: inline-block;
-}
+
 
 /* login之後出現的 */
 .downMenu{
