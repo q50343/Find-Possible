@@ -126,7 +126,7 @@ function heartClick(){
     if(user.innerHTML !== ''){
         heartCheck = !heartCheck;
         console.log((parseInt(heartNumNow))+ 1);
-        heartCheck? heartNum.innerHTML = (parseInt(heartNumNow))+ 1 : heartNum.innerHTML = (parseInt(heartNumNow));
+        heartCheck? heartNum.innerHTML = (parseInt(heartNumNow))+ 1 : heartNum.innerHTML = ' '+ (parseInt(heartNumNow));
         heartCheck? heart.style.color = 'rgb(247, 91, 91)':heart.style.color = '#bbb'
     }   
 }
@@ -138,13 +138,7 @@ var commentNum =document.querySelector('.comment-num');
 var commentNumNow = commentNum.innerHTML;
 comment.addEventListener('click',commentClick,false);
 commentText.addEventListener('keydown',textNum,false);
-
-var newUser = document.querySelector('.new');
-var newName = document.querySelector('.new-name');
-var newResponse = document.querySelector('.new-response');
-var edit = document.querySelector('.fa-edit');
-var response = document.querySelector('.response');
-var newC = document.querySelector('.new-c');
+var innerWrapper = document.querySelector('.inner-wrapper');
 
 // 打開commentText
 function commentClick(){
@@ -156,39 +150,115 @@ function commentClick(){
 }
 // commentText高度變2
 function textNum(e){
-    if(e.target.textLength>e.target.cols){
+    if(e.target.textLength > e.target.cols){
         commentText.rows = '2'
     }
     // 出現留言
     if(e.keyCode == 13){
-        newUser.style.display = 'block';
-        newName.innerHTML = user.innerHTML;
-        newResponse.textContent = commentText.value;
-        commentText.value = null;
-        commentNum.innerHTML = (parseInt(commentNumNow))+ 1 ;
-        edit.style.display = 'block'
-    }   
-}
-
-// edit
-edit.onclick = function(){
-    var textR = newResponse.innerHTML;
-    newResponse.style.display = 'none';
-    var textBox = document.createElement('input');
-    textBox.type = 'text';
-    textBox.setAttribute('class','edit');
-    textBox.value = textR;
-    newC.appendChild(textBox);
-
-    textBox.onkeydown = function(e){
-        if(e.keyCode == 13){
-            var edit2 = textBox.value;
-            textBox.style.display = 'none';
-            newResponse.style.display = 'block';
-            newResponse.innerHTML = edit2;
+        e.preventDefault()
+        if(commentText.value !== ""){
+            var newResponseBox = document.createElement('div');
+            var text = commentText.value;
+            var cleanfix = document.createElement('div');
+            cleanfix.classList.add('cleanfix');
+            var newHead = document.createElement('div');
+            newHead.classList.add('head');
+            newHead.style.backgroundImage = 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRgVkFSn7OUyoXx9b4BGB1Z-9hx_7WDXUelEoaRFkViWwM_e9h)';
+            var newName = document.createElement('div');
+            newName.classList.add('name');
+            newName.innerHTML = user.innerHTML;
+            innerWrapper.appendChild(newResponseBox);
+            newResponseBox.appendChild(cleanfix);
+            cleanfix.appendChild(newHead);
+            cleanfix.appendChild(newName);
+            
+            var cleanfix2 = document.createElement('div');
+            cleanfix2.classList.add('cleanfix');
+            newResponseBox.appendChild(cleanfix2);
+            
+            var response = document.createElement('div');
+            cleanfix2.appendChild(response);
+            response.outerHTML = '<div class="response new-response">'+ text +'</div><textarea class = "edit-text"></textarea><div class = "ellipsis"><i class="fas fa-ellipsis-h"></i><div class = "select"><div class = "edit"><i class="fas fa-edit"> </i> edit</div><div class = "deleteT"><i class="fas fa-trash-alt"></i> delete</div></div></div> '
+            commentText.value = null;
+            commentNumNow ++;
+            commentNum.innerHTML = ' ' + (parseInt(commentNumNow)) ;
+            var edit = document.querySelectorAll('.edit');
+            var select = document.querySelectorAll('.select');
+            var deleteT = document.querySelectorAll('.deleteT');
+            var newResponse = document.querySelectorAll('.new-response');
+            
+            // select
+            var ellipsis = document.querySelectorAll('.fa-ellipsis-h');
+            for(let i=0;i<ellipsis.length;i++){
+                ellipsis[i].onclick = function(){
+                    console.log(i);
+                    ellipsis[i].style.color = 'rgb(101, 107, 121)';                
+                    select[i].style.display = 'block';
+                }
+                document.onclick = function(e){
+                    if(e.target.className !== "fas fa-ellipsis-h"){
+                        console.log(e.target.className)
+                        for(let i=0;i<select.length;i++){
+                            select[i].style.display = 'none';
+                            ellipsis[i].style.color = '#eee'; 
+                        }
+                    }
+                }
+                
+                // edit
+                for(let i=0;i<edit.length;i++){
+                    edit[i].onclick = function(){
+                        console.log(i)
+                        ellipsis[i].style.display = 'none';
+                        select[i].style.display = 'none';
+                        var textR = newResponse[i].innerHTML;
+                        newResponse[i].style.display = 'none';
+                        console.log(this.parentElement.previousElementSibling.parentElement.previousElementSibling);
+                        var textBox = this.parentElement.previousElementSibling.parentElement.previousElementSibling;
+                        textBox.style.display = 'block';                   
+                        textBox.value = textR;
+                        
+                        textBox.onkeydown = function(e){
+                            if(e.keyCode == 13){
+                                var edit2 = textBox.value;
+                                textBox.style.display = 'none';
+                                newResponse[i].style.display = 'block';
+                                newResponse[i].innerHTML = edit2;
+                                ellipsis[i].style.display = 'block';
+                                ellipsis[i].style.color = '#eee';
+                                
+                                ellipsis[i].onmouseover = function(){
+                                    ellipsis[i].style.color = 'rgb(101, 107, 121)';
+                                }
+                                // ellipsis[i].onmouseout = function(){
+                                //     ellipsis[i].style.color = '#eee';
+                                // }
+                            }
+                        }
+                    }               
+                }   
+                
+                // deleteT
+                for(let i=0;i<deleteT.length;i++){
+                    deleteT[i].onclick = function(){
+                        console.log(i)
+                        var deleteTBox = this.parentElement.parentElement.parentElement.parentElement;
+                        console.log(deleteTBox);
+                        
+                        function removeAllChild()  {                     
+                            while(deleteTBox.hasChildNodes()){ 
+                                deleteTBox.removeChild(deleteTBox.firstChild);                        
+                            }   
+                        }
+                        removeAllChild();     
+                        commentNumNow --;
+                        commentNum.innerHTML = ' ' + (parseInt(commentNumNow)) ;
+                    }
+                }
+            }
         }
     }
-}
+}    
 
 // log out
 var logOut = document.querySelector('.log-out');

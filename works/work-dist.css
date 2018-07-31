@@ -64,7 +64,9 @@ a:hover{
     color: #fff;
     display: none;
 }
-
+.inner-wrapper{
+    padding-bottom: 50px;
+}
 /* header */
 .header{
     top: 50px;
@@ -104,6 +106,10 @@ a:hover{
     color: #5793cf;
     margin-top: 3px;
     cursor: pointer;
+}
+.follow:hover{
+    background: #5793cf;
+    color: #fff
 }
 .follow-active{
     background: #5793cf;
@@ -161,6 +167,7 @@ span{
     font-size: 16px;
     resize: none;
     display: none;
+    overflow: hidden;
 }
 .comment-text:focus{
     border: 1px solid #ddd; 
@@ -189,39 +196,54 @@ span{
 }
 .response{
     margin:0 20px 30px 60px;
-    padding-right: 50px;
-}
-.new-c{
-    width: 90%;
-}
-.new-c::after{
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
+    width: 70%;
 }
 .new-response{
     float: left;
 }
-.fa-edit{    
-    color: #bbb;
+.ellipsis{    
+    color: #eee;
     float: right;
-    display: none;
+    padding-right: 10px;
+    position: relative;
 }
-.fa-edit:hover{
+.ellipsis:hover{
     color: rgb(101, 107, 121);  
 }
-.edit{
+.edit-text{
     margin-left: 60px;
     width: 60%;
     border-radius: 10px;
     border: 1px solid #bbb;
     padding-left: 5px;
+    display: none;
+    resize: none;
+    overflow: hidden;
 }
-.edit:focus{
+.edit-text:focus{
     border:1px solid #bbb;
+}
+.select{
+    border: 1px solid #bbb;
+    width: 90px;
+    height: 65px;
+    position: absolute;
+    right: 0;
+    top:20px;
+    z-index: 10;
+    padding: 5px;
+    box-shadow: 0 5px 10px rgba(210,210,210,0.5);
+    display: none;
+}
+.select div{
+    color: #bbb;
+    cursor: pointer;
+}
+.select div:hover{
+    color: rgb(101, 107, 121); 
+}
+.fa-edit{
+    padding-bottom: 10px;
 }
 .fb-share-button{
     position: absolute;

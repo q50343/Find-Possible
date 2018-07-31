@@ -74,9 +74,8 @@ var stopCheck = true;
 for(var i=0;i<followFollowNew.length;i++){
     
     followFollowNew[i].onclick = function(){
-        console.log(this.dataset.check)
+    
         // 已經follow
-        
         if(this.dataset.check == 'yes'){
             var now = this;
             var personN = this.previousElementSibling.previousElementSibling.style.backgroundImage;
