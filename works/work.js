@@ -279,7 +279,7 @@ logOut.onclick = function(e){
     }   
     commentText.style.display = 'none';
     form.style.display = 'block';
-    userMenu.style.color = "#212529";
+    userMenu.style.display = 'none';
     loginClick.style.display = 'block';
     user.innerHTML = '';
 }
